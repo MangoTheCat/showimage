@@ -11,7 +11,8 @@ LazyData: true
 URL: https://github.com/gaborcsardi/showimage
 BugReports: https://github.com/gaborcsardi/showimage/issues
 Imports:
-    png
+    png,
+    tools
 Suggests:
     testthat
 RoxygenNote: 4.1.1.9001
