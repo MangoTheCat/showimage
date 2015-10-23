@@ -3,10 +3,15 @@ Title: Show an Image on an R Graphics Device
 Version: 1.0.0
 Author: Gabor Csardi
 Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
-Description: sometimes it is handy to be able to view an image file on an R graphics device.
+Description: Sometimes it is handy to be able to view an image file on an
+    R graphics device. This package just does that. Currently it supports
+    PNG files.
 License: MIT + file LICENSE
 LazyData: true
 URL: https://github.com/gaborcsardi/showimage
 BugReports: https://github.com/gaborcsardi/showimage/issues
-Suggests: 
+Imports:
+    png
+Suggests:
     testthat
+RoxygenNote: 4.1.1.9001

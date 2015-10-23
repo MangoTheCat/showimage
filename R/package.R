@@ -1,8 +1,12 @@
 
 #' Show an Image on an R Graphics Device
 #'
-#' sometimes it is handy to be able to view an image file on an R graphics device.
+#' @param file Name of the image file to show.
 #'
-#' @docType package
-#' @name showimage
-NULL
+#' @importFrom png readPNG
+#' @export
+
+show_image <- function(file) {
+
+}
+
