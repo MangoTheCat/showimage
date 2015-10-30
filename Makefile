@@ -2,4 +2,4 @@
 all: README.md
 
 README.md: inst/README.Rmd
-	Rscript -e "library(knitr); knit('$<', output = '$@', quiet = TRUE)"
+	cd inst && Rscript -e "library(knitr); knit('README.Rmd', output = '$@', quiet = TRUE)"

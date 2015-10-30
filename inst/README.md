@@ -27,7 +27,13 @@ devtools::install_github("mangothecat/showimage")
 
 ```r
 library(showimage)
+png(tmp <- tempfile(fileext = ".png"))
+pairs(iris)
+dev.off()
+show_image(tmp)
 ```
+
+![plot of chunk unnamed-chunk-2](unnamed-chunk-2-1.png) 
 
 ## License
 
