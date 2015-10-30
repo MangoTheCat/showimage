@@ -5,8 +5,8 @@
 
 > Show an Image on an R Graphics Device
 
-[![Linux Build Status](https://travis-ci.org/gaborcsardi/showimage.svg?branch=master)](https://travis-ci.org/gaborcsardi/showimage)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/showimage?svg=true)](https://ci.appveyor.com/project/gaborcsardi/showimage)
+[![Linux Build Status](https://travis-ci.org/MangoTheCat/showimage.svg?branch=master)](https://travis-ci.org/MangoTheCat/showimage)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/MangoTheCat/showimage?svg=true)](https://ci.appveyor.com/project/gaborcsardi/showimage)
 [![](http://www.r-pkg.org/badges/version/showimage)](http://www.r-pkg.org/pkg/showimage)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/showimage)](http://www.r-pkg.org/pkg/showimage)
 
@@ -19,7 +19,7 @@ PNG files.
 
 
 ```r
-devtools::install_github("gaborcsardi/showimage")
+devtools::install_github("mangothecat/showimage")
 ```
 
 ## Usage
@@ -31,4 +31,4 @@ library(showimage)
 
 ## License
 
-MIT © [Gabor Csardi](https://github.com/gaborcsardi).
+GPL-2 | GPL-3 © [Mango Solutions](https://github.com/mangothecat), Simon Urbanek
