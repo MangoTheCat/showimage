@@ -13,7 +13,7 @@
 #' @importFrom tools file_ext
 #' @export
 
-show_image <- function(file, mar = c(0.1, 0.1, 0.1, 0.1),
+show_image <- function(file, mar = c(0, 0, 0, 0),
                        axes = FALSE, frame.plot = TRUE, ...) {
 
   if (!file.exists(file)) stop("File does not exist: ", file)
@@ -38,9 +38,9 @@ show_image_png <- function(file, mar, ...) {
   img <- readPNG(file)
 
   on.exit(par(oldpar))
-  oldpar <- par(mar = mar)
+  oldpar <- par(mar = mar, oma = c(0, 0, 0, 0))
 
-  plot(1:2, type = "n", ...)
+  plot(NA, xlim = c(1, 2), ylim = c(1,2), type = "n", ...)
 
   if (names(dev.cur()) == "windows") {
     ## windows device doesn't support semi-transparency so we'll need
@@ -51,10 +51,10 @@ show_image_png <- function(file, mar, ...) {
 
     ## interpolate must be FALSE on Windows, otherwise R will
     ## try to interpolate transparency and fail
-    rasterImage(img, 1.2, 1.27, 1.8, 1.73, interpolate=FALSE)
+    rasterImage(img, 1, 1, 2, 2, interpolate=FALSE)
 
   } else {
     ## any reasonable device will be fine using alpha
-    rasterImage(img, 1.2, 1.27, 1.8, 1.73)
+    rasterImage(img, 1, 1, 2, 2)
   }
 }
