@@ -6,7 +6,7 @@ Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
 Description: Sometimes it is handy to be able to view an image file on an
     R graphics device. This package just does that. Currently it supports
     PNG files.
-License: MIT + file LICENSE
+License: GPL-2 | GPL-3
 LazyData: true
 URL: https://github.com/gaborcsardi/showimage
 BugReports: https://github.com/gaborcsardi/showimage/issues
