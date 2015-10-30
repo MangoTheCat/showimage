@@ -12,6 +12,15 @@
 #' @importFrom png readPNG
 #' @importFrom tools file_ext
 #' @export
+#' @examples
+#' rlogo <- system.file("img", "Rlogo.png", package="png")
+#' show_image(rlogo)
+#'
+#' ## Create a plot in a PNG and show it
+#' png(tmp <- tempfile(fileext = ".png"))
+#' pairs(iris)
+#' dev.off()
+#' show_image(tmp)
 
 show_image <- function(file, mar = c(0, 0, 0, 0),
                        axes = FALSE, frame.plot = TRUE, ...) {

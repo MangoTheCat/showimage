@@ -4,8 +4,8 @@
 \alias{show_image}
 \title{Show an Image on an R Graphics Device}
 \usage{
-show_image(file, mar = c(0.1, 0.1, 0.1, 0.1), axes = FALSE,
-  frame.plot = TRUE, ...)
+show_image(file, mar = c(0, 0, 0, 0), axes = FALSE, frame.plot = TRUE,
+  ...)
 }
 \arguments{
 \item{file}{Name of the image file to show.}
@@ -25,5 +25,15 @@ Nothing.
 }
 \description{
 Show an Image on an R Graphics Device
+}
+\examples{
+rlogo <- system.file("img", "Rlogo.png", package="png")
+show_image(rlogo)
+
+## Create a plot in a PNG and show it
+png(tmp <- tempfile(fileext = ".png"))
+pairs(iris)
+dev.off()
+show_image(tmp)
 }
 
