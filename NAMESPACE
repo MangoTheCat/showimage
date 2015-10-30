@@ -2,3 +2,4 @@
 
 export(show_image)
 importFrom(png,readPNG)
+importFrom(tools,file_ext)

@@ -4,10 +4,24 @@
 \alias{show_image}
 \title{Show an Image on an R Graphics Device}
 \usage{
-show_image(file)
+show_image(file, mar = c(0.1, 0.1, 0.1, 0.1), axes = FALSE,
+  frame.plot = TRUE, ...)
 }
 \arguments{
 \item{file}{Name of the image file to show.}
+
+\item{mar}{Margin, the \code{mar} parameter, see \code{par}.}
+
+\item{axes}{Whether to show the axes. You need to increase the
+margin to see the axis labels.}
+
+\item{frame.plot}{Whether to draw a frame around the plot.}
+
+\item{...}{Additonal arguments are passed to \code{plot}.}
+}
+\value{
+Nothing.
+
 }
 \description{
 Show an Image on an R Graphics Device
