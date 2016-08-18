@@ -6,6 +6,8 @@
 #' @param axes Whether to show the axes. You need to increase the
 #'   margin to see the axis labels.
 #' @param frame.plot Whether to draw a frame around the plot.
+#' @param asp Aspect ratio parameter for \code{plot}. If \code{NULL},
+#'   then the original aspect ratio of the image is used.
 #' @param ... Additonal arguments are passed to \code{plot}.
 #' @return Nothing.
 #'
@@ -25,14 +27,15 @@
 #' show_image(tmp)
 
 show_image <- function(file, mar = c(0, 0, 0, 0),
-                       axes = FALSE, frame.plot = TRUE, ...) {
+                       axes = FALSE, frame.plot = TRUE, asp = NULL, ...) {
 
   if (!file.exists(file)) stop("File does not exist: ", file)
 
   ext <- tolower(file_ext(file))
 
   if (ext == "png") {
-    show_image_png(file, mar = mar, axes = axes, frame.plot = frame.plot, ...)
+    show_image_png(file, mar = mar, axes = axes, frame.plot = frame.plot,
+                   asp = asp, ...)
 
   } else {
     stop("Unknown image type")
@@ -44,14 +47,16 @@ show_image <- function(file, mar = c(0, 0, 0, 0),
 ## This is mostly from the png::readPNG manual page example,
 ## by Simon Urbanek
 
-show_image_png <- function(file, mar, ...) {
+show_image_png <- function(file, mar, asp, ...) {
 
   img <- readPNG(file)
 
   on.exit(par(oldpar))
   oldpar <- par(mar = mar, oma = c(0, 0, 0, 0))
 
-  plot(NA, xlim = c(1, 2), ylim = c(1,2), type = "n", ...)
+  if (is.null(asp)) asp <- nrow(img) / ncol(img)
+
+  plot(NA, xlim = c(1, 2), ylim = c(1,2), type = "n", asp = asp, ...)
 
   if (names(dev.cur()) == "windows") {
     ## windows device doesn't support semi-transparency so we'll need

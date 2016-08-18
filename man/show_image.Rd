@@ -5,7 +5,7 @@
 \title{Show an Image on an R Graphics Device}
 \usage{
 show_image(file, mar = c(0, 0, 0, 0), axes = FALSE, frame.plot = TRUE,
-  ...)
+  asp = NULL, ...)
 }
 \arguments{
 \item{file}{Name of the image file to show.}
@@ -17,11 +17,13 @@ margin to see the axis labels.}
 
 \item{frame.plot}{Whether to draw a frame around the plot.}
 
+\item{asp}{Aspect ratio parameter for \code{plot}. If \code{NULL},
+then the original aspect ratio of the image is used.}
+
 \item{...}{Additonal arguments are passed to \code{plot}.}
 }
 \value{
 Nothing.
-
 }
 \description{
 Show an Image on an R Graphics Device
