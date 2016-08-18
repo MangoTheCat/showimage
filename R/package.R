@@ -11,6 +11,8 @@
 #'
 #' @importFrom png readPNG
 #' @importFrom tools file_ext
+#' @importFrom grDevices as.raster dev.cur
+#' @importFrom graphics par plot rasterImage
 #' @export
 #' @examples
 #' rlogo <- system.file("img", "Rlogo.png", package="png")
